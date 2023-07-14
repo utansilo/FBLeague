@@ -1,34 +1,34 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Point Placement
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col size="1"><strong>Rank</strong></ion-col>
-      <ion-col size="3"><strong>Team Name</strong></ion-col>
+    <ion-row style="font-size: small; text-align: center;">
+      <ion-col size="1" style="font-size: 12px;"><strong>Rank</strong></ion-col>
+      <ion-col size="3" style="text-align: left;"><strong>Team Name</strong></ion-col>
       <ion-col size="1"><strong>W</strong></ion-col>
       <ion-col size="1"><strong>D</strong></ion-col>
       <ion-col size="1"><strong>L</strong></ion-col>
       <ion-col size="1"><strong>GA</strong></ion-col>
       <ion-col size="1"><strong>GF</strong></ion-col>
       <ion-col size="1"><strong>GD</strong></ion-col>
-      <ion-col size="1"><strong>Points</strong></ion-col>
+      <ion-col size="2"><strong>Points</strong></ion-col>
     </ion-row>
-    <ion-row *ngFor="let team of standings">
+    <ion-row *ngFor="let team of standings" style="font-size: small;">
       <ion-col size="1">{{ team.intRank }}</ion-col>
       <ion-col size="3">{{ team.strTeam }}</ion-col>
-      <ion-col size="1">{{ team.intWin }}</ion-col>
-      <ion-col size="1">{{ team.intDraw }}</ion-col>
-      <ion-col size="1">{{ team.intLoss }}</ion-col>
-      <ion-col size="1">{{ team.intGoalsAgainst }}</ion-col>
-      <ion-col size="1">{{ team.intGoalsFor }}</ion-col>
-      <ion-col size="1">{{ team.intGoalDifference }}</ion-col>
-      <ion-col size="1">{{ team.intPoints }}</ion-col>
+      <ion-col size="1" style="text-align: center;">{{ team.intWin }}</ion-col>
+      <ion-col size="1" style="text-align: center;">{{ team.intDraw }}</ion-col>
+      <ion-col size="1" style="text-align: center;">{{ team.intLoss }}</ion-col>
+      <ion-col size="1" style="text-align: center;">{{ team.intGoalsAgainst }}</ion-col>
+      <ion-col size="1" style="text-align: center;">{{ team.intGoalsFor }}</ion-col>
+      <ion-col size="1" style="text-align: center;">{{ team.intGoalDifference }}</ion-col>
+      <ion-col size="2" style="text-align: center;">{{ team.intPoints }}</ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
