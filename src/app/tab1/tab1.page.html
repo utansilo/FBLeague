@@ -1,17 +1,18 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Teams
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let team of teams" (click)="onSelectTeam(team)">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="team.strTeamBadge" alt="Logo"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{ team.strTeam }}</ion-label>
+    </ion-item>       
+  </ion-list>
 </ion-content>
