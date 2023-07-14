@@ -8,7 +8,7 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'club-detail/:teamId',
+    path: 'club-detail/:index',
     component: ClubDetailPage,
     loadChildren: () => import('./club-detail/club-detail.module').then( m => m.ClubDetailPageModule)
   }

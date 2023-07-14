@@ -8,33 +8,25 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./club-detail.page.scss'],
 })
 export class ClubDetailPage implements OnInit {
-  teamId: string = '';
+  teamIndex: number = 0;
   teamDetail: any;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit() {
-  const state = history.state;
-  const team = state?.team;
-
-  if (team) {
-    this.teamId = team.id;
-    this.getTeamDetail();
+    this.route.paramMap.subscribe(params => {
+      this.teamIndex = +params.get('index')!;
+      // Panggil fungsi untuk mendapatkan detail klub berdasarkan teamId
+      this.getTeamDetail();
+    });
   }
-}
 
-getTeamDetail() {
-  const url = `https://www.thesportsdb.com/api/v1/json/3/lookupteam.php?id=${this.teamId}`;
+  getTeamDetail() {
+    const url = `https://www.thesportsdb.com/api/v1/json/3/search_all_teams.php?l=English%20Premier%20League`;
 
-  this.http.get<any>(url)
-    .subscribe({
-      next: (response) => {
-        this.teamDetail = response.teams[0];
-      },
-      error: (error) => { 
-        console.error(error); 
-      }
+    this.http.get<any>(url).subscribe((response) => {
+      const teams = response.teams;
+      this.teamDetail = teams[this.teamIndex];
     })
-}
-
+  }
 }

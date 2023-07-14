@@ -8,7 +8,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let team of teams" (click)="onSelectTeam(team)">
+    <ion-item *ngFor="let team of teams; let i = index" [routerLink]="['/club-detail', i]">
       <ion-thumbnail slot="start">
         <ion-img [src]="team.strTeamBadge" alt="Logo"></ion-img>
       </ion-thumbnail>

@@ -5,7 +5,7 @@ import { ClubDetailPage } from './club-detail.page';
 
 const routes: Routes = [
   {
-    path: 'club-id/:teamid',
+    path: 'club-detail/:index',
     component: ClubDetailPage,
   }
 ];

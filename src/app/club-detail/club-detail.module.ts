@@ -11,7 +11,7 @@ import { ClubDetailPage } from './club-detail.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'club-detail/teamId',
     component: ClubDetailPage
   }
 ];
