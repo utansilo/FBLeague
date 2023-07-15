@@ -7,12 +7,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list style="align-items: center;">
     <ion-item *ngFor="let team of teams; let i = index" [routerLink]="['/club-detail', i]">
       <ion-thumbnail slot="start">
         <ion-img [src]="team.strTeamBadge" alt="Logo"></ion-img>
       </ion-thumbnail>
-      <ion-label>{{ team.strTeam }}</ion-label>
+      <ion-label style="position: absolute;">{{ team.strTeam }}</ion-label>
     </ion-item>       
   </ion-list>
 </ion-content>
